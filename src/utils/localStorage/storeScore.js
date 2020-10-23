@@ -6,3 +6,5 @@ export default function storeScore(playerID, point) {
     localStorage.setItem(`player-${playerID}`, JSON.stringify(playerScore));
     return playerScore;
   }
+
+  // to String lowercase einfügen
