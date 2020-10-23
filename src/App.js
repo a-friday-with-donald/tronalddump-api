@@ -1,6 +1,8 @@
 import "./app.css";
 import Button from "./components/Button";
 import Header from "./components/Header";
+import { getScore } from "./utils/localStorage/getScore";
+import { storeScore } from "./utils/localStorage/storeScore";
 import { getRandomQuote, getAllTags } from "./utils/api";
 import { createElement, styled } from "./utils/elements";
 
@@ -24,16 +26,22 @@ function App() {
 
   const playerName = "Horst";
 
-  async function game() {
+  function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+
+  async function game(playerName) {
     const quote = await getRandomQuote();
     const tags = await getAllTags();
+    const playerScore = getScore(playerName);
     const answers = [];
+    let correctAnswer = quote.tags[0];
 
-    if (quote.tags !== "") {
-      answers.push(quote.tags[0]);
+    if (correctAnswer !== "") {
+      answers.push(correctAnswer);
     }
 
-    let indexOld = tags.indexOf(quote.tags[0]);
+    let indexOld = tags.indexOf(correctAnswer);
 
     while (answers.length < 3) {
       const index = Math.floor(Math.random() * (tags.length + 1));
@@ -42,8 +50,27 @@ function App() {
         indexOld = index;
       }
     }
+    return {
+      quote: quote.quote,
+      score: playerScore,
+      answers: shuffle(answers),
+      correctAnswer: correctAnswer,
+    };
   }
-  game();
+
+  const gameData = game(playerName);
+
+  function gameResult(gameData, index) {
+    if (gameData.correctAnswer.length === 0) {
+      storeScore(playerName, 2);
+      console.log("You nailed it!!!");
+    }
+    if (gameData.answers[index].includes(gameData.correctAnswer)) {
+      storeScore(playerName, 1);
+    }
+    game(playerName);
+  }
+
   return container;
 }
 
