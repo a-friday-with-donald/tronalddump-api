@@ -1,20 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg-primary: rgb(48, 118, 209);
-}
-
 html {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
-  height: 100%;
 }
 
 p {
@@ -42,7 +31,6 @@ body {
     #652d73 45.31%,
     #913232 97.92%
   );
-  height: 100%;
 }
 
 header {
@@ -80,12 +68,7 @@ nav > div > a:nth-child(2) {
 }
 
 main {
-  margin: 0 calc(100% / 12);
-}
-
-.container {
-  height: 100%;
-  width: 100%;
+  margin: 80px calc(100% / 12) 0;
 }
 
 footer {
