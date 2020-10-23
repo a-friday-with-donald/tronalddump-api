@@ -12,7 +12,7 @@ export async function getAllTags() {
   const url = `https://api.tronalddump.io/tag`;
   const response = await fetch(url);
   const data = await response.json();
-  const allTags = data._embedded.tag;
+  const allTags = await data._embedded.tag;
   const tags = allTags.map((tag) => {
     return tag.value;
   });
