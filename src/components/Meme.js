@@ -1,18 +1,19 @@
 import { createElement, styled } from "../utils/elements";
 import "./Meme.css";
 
-export default function Meme (quote) {
-    const meme = createElement("div", {
-        className: "meme",
+export default function Meme(quote, tag) {
+  const meme = createElement("div", {
+    children: [
+      createElement("div", {
         innerText: quote,
-        children:
-        [
-            createElement("p", {
-                className: "meme--author",
-                innerText: "Donald Trump"
-            })
-        ]
-    })
+        className: "meme",
+      }),
+      createElement("p", {
+        className: "meme--author",
+        innerText: tag,
+      }),
+    ],
+  });
 
-    return meme;
+  return meme;
 }

@@ -13,6 +13,8 @@ import { createElement, styled } from "./utils/elements";
 function App() {
   // player info
   let player = null;
+  const placeholder =
+    "I've always won, and I'm going to continue to win. And that's the way it is.";
 
   // Header
   const headerElement = Header();
@@ -23,7 +25,7 @@ function App() {
   // default when open site - give name by user
   const loginForm = Loginform(
     Button({
-      className: "btn--login",
+      className: "btn btn--login",
       innerText: "Play ►",
       onclick: () => {
         contentPlacement(input.value);
@@ -33,9 +35,7 @@ function App() {
   mainElement.append(loginForm);
 
   // Placeholder during loading new content
-  const meme = Meme(
-    "I've always won, and I'm going to continue to win. And that's the way it is."
-  );
+  const meme = Meme(placeholder, "Donald Trump");
 
   // start game after login
   function contentPlacement(playerName) {
@@ -68,6 +68,7 @@ function App() {
     innerText: "0",
     className: "footer--points",
   });
+  console.log(footerElement.span);
   footerElement.append(points);
 
   // Game Instructions
@@ -80,7 +81,7 @@ function App() {
         innerText: "Game instructions",
       }),
       Button({
-        className: "btn-close",
+        className: "btn--close",
         innerText: "X",
         onclick: () => {
           document.querySelector(".modalContainer").classList.toggle("hidden");

@@ -6,7 +6,7 @@
   font-size: clamp(.8rem, 1vw, 1.5vw);
 }
 
-.btn--Head-Disabled{
+.btn--Head-Disabled {
   border: 1px solid #333;
   color: #333;
 }
@@ -15,4 +15,42 @@
   border: 1px solid white;
   color: white;
   cursor: pointer;
+}
+
+.btn--Head:hover {
+  border: 1px solid #333;
+  background-color: rgb(75, 75, 75);
+}
+
+.btn--close {
+  width: 3rem;
+  height: 3rem;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.btn--close:hover {
+  border: 1px solid #333;
+  background-color: rgb(75, 75, 75);
+}
+
+.btn--login {
+  margin-top: 1vw;
+  border-radius: 50px;
+  padding: 1rem 7vw 1rem 7vw;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 2.5vw);
+}
+
+.btn--login:hover {
+  border: 1px solid #333;
+  background-color: rgb(75, 75, 75);
 }

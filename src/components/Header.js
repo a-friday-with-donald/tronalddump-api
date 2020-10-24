@@ -22,16 +22,23 @@ function Header() {
           }),
         ],
       }),
-      Button({
-        className: "btn btn--Head-Disabled",
-        innerText: "Leaderboard",
-      }),
-      Button({
-        className: "btn btn--Head",
-        innerText: "Instructions",
-        onclick: () => {
-          document.querySelector(".modalContainer").classList.toggle("hidden");
-        },
+      createElement("div", {
+        className: "head-button-container",
+        children: [
+          Button({
+            className: "btn btn--Head-Disabled",
+            innerText: "Leaderboard",
+          }),
+          Button({
+            className: "btn btn--Head",
+            innerText: "Instructions",
+            onclick: () => {
+              document
+                .querySelector(".modalContainer")
+                .classList.toggle("hidden");
+            },
+          }),
+        ],
       }),
     ],
   });
