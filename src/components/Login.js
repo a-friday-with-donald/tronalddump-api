@@ -1,7 +1,7 @@
 import { createElement, styled } from "../utils/elements";
 import "./Login.css";
 
-export default function Loginform () {
+export default function Loginform (btn) {
     const form = createElement("form",{
         className: "login",
         children: 
@@ -12,7 +12,8 @@ export default function Loginform () {
                 id: "input",
                 name: "input",
                 placeholder: "Enter your name"
-            })
+            }),
+            btn
         ]
     })
 

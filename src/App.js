@@ -10,6 +10,9 @@ import { createElement, styled } from "./utils/elements";
 // const PrimaryButton = styled(Button, "bg-primary");
 
 function App() {
+  // player info
+  let player = null;
+
   // Header
   const headerElement = Header();
 
@@ -17,16 +20,46 @@ function App() {
   const mainElement = Main();
 
   // default when open site - give name by user
-  const loginForm = Loginform();
-  const loginBtn = Button({
-    className: "btn--login",
-    innerText: "Play ►"
-  });
-  loginForm.append(loginBtn);
+  const loginForm = Loginform(
+    Button({
+      className: "btn--login",
+      innerText: "Play ►",
+      onclick: () => {
+        contentPlacement(input.value);
+      },
+    })
+  );
   mainElement.append(loginForm);
 
-  // const meme = Meme("I've always won, and I'm going to continue to win. And that's the way it is.");
-  // mainElement.append(meme);
+  // Placeholder during loading new content
+  const meme = Meme(
+    "I've always won, and I'm going to continue to win. And that's the way it is."
+  );
+
+  // start game after login
+  function contentPlacement(playerName) {
+    if (playerName === "") {
+      playerName = "anonymous";
+    }
+    player = playerName;
+
+    mainElement.innerHTML = "";
+    mainElement.append(meme);
+
+    // generate game info for first round
+    // const gameInfo = getGameInfo();
+    // generateGameField(gameInfo);
+  }
+
+  // Game Engine
+
+  // getGameInfo()
+
+  // generateGameField(gameInfo)
+
+  // reading players response
+
+  // reaction Donald Trump on players input
 
   // Footer
   const footerElement = Footer();

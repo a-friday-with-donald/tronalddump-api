@@ -12,11 +12,12 @@
 }
 
 .btn--login {
-  border-radius: 25px;
-  padding: 1rem 2rem 1rem 2rem;
+  margin-top: 1vw;
+  border-radius: 50px;
+  padding: 1rem 7vw 1rem 7vw;
   background: none;
   border: 1px solid white;
   color: white;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: clamp(1rem, 2vw, 2.5vw);
 }

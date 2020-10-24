@@ -1,0 +1,12 @@
+.modal-content {
+    width: 100%;
+  }
+
+.modal--list > li {
+    padding: .5rem;
+    font-size: clamp(.6rem, 1.5vw, 1.5vw);
+}
+
+.modal--list > :first-child {
+    padding-top: 0;
+}

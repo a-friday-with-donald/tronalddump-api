@@ -2,6 +2,7 @@ import "./Header.css";
 import logoSrc from "../assets/meme_logo.png";
 import Button from "./Button";
 import { createElement } from "../utils/elements";
+import Modal from "./Modal";
 
 function Header() {
   const header = createElement("header", {
@@ -22,6 +23,25 @@ function Header() {
           }),
         ],
       }),
+      createElement("div", {
+        className: "modalContainer",
+        children: [
+          Button({
+            className: "btn-close",
+            innerText: "X",
+            onclick: () => {
+              document
+                .querySelector(".modalContainer")
+                .classList.toggle("hidden");
+            },
+          }),
+          createElement("h2", {
+            className: "modal-head",
+            innerText: "Game instructions",
+          }),
+          Modal(),
+        ],
+      }),
       Button({
         className: "btn btn--Head-Disabled",
         innerText: "Leaderboard",
@@ -29,6 +49,9 @@ function Header() {
       Button({
         className: "btn btn--Head",
         innerText: "Instructions",
+        onclick: () => {
+          document.querySelector(".modalContainer").classList.toggle("hidden");
+        },
       }),
     ],
   });
