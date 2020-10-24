@@ -3,7 +3,7 @@ export default function getScore(playerID) {
     localStorage.getItem(`player-${playerID}`) || "[]"
   );
 
-  //   helper function - please review
+  // helper function - please review
   function sumScore(playerScore) {
     let sum = playerScore.reduce(function (acc, curr) {
       let sum = acc + curr;
