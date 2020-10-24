@@ -1,8 +1,8 @@
 import "./app.css";
 import Button from "./components/Button";
 import Header from "./components/Header";
-import { getScore } from "./utils/localStorage/getScore";
-import { storeScore } from "./utils/localStorage/storeScore";
+import getScore from "./utils/localStorage/getScore";
+import storeScore from "./utils/localStorage/storeScore";
 import { getRandomQuote, getAllTags } from "./utils/api";
 import { createElement, styled } from "./utils/elements";
 
