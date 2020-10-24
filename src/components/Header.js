@@ -23,11 +23,11 @@ function Header() {
         ],
       }),
       Button({
-        className: "Head-Disabled",
+        className: "btn btn--Head-Disabled",
         innerText: "Leaderboard",
       }),
       Button({
-        className: "Head",
+        className: "btn btn--Head",
         innerText: "Instructions",
       }),
     ],

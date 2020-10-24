@@ -1,9 +1,9 @@
-import "./main.css";
+import "./Main.css";
 import { createElement } from "../utils/elements";
 
 function Main() {
   
-  const main = createElement("div", {
+  const main = createElement("main", {
     className: "main"
   })
 
