@@ -6,6 +6,7 @@
     word-wrap: break-word;
     position: relative;
     z-index: 1;
+    margin-top: 3rem;
 }
 
 .meme::before{
