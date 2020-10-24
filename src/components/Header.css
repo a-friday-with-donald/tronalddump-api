@@ -26,27 +26,6 @@
   height: 60px;
 }
 
-.modalContainer {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 70vw;
-  height: 80vh;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
-  padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  row-gap: .5rem;
-}
-
-.modal-head{
-  text-transform: uppercase;
-  margin: 0;
-}
 
 .btn-close {
   width: 45px;
@@ -60,6 +39,4 @@
   margin-right: 1rem;
 }
 
-.hidden {
-  display: none;
-}
+

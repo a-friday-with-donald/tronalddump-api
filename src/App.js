@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Loginform from "./components/Login";
 import Meme from "./components/Meme";
 import Main from "./components/Main";
+import Modal from "./components/Modal";
 import { createElement, styled } from "./utils/elements";
 
 // const PrimaryButton = styled(Button, "bg-primary");
@@ -69,10 +70,30 @@ function App() {
   });
   footerElement.append(points);
 
+  // Game Instructions
+
+  const modal = createElement("div", {
+    className: "modalContainer",
+    children: [
+      createElement("h2", {
+        className: "modal-head",
+        innerText: "Game instructions",
+      }),
+      Button({
+        className: "btn-close",
+        innerText: "X",
+        onclick: () => {
+          document.querySelector(".modalContainer").classList.toggle("hidden");
+        },
+      }),
+      Modal(),
+    ],
+  });
+
   // export site completed
   const container = createElement("div", {
     className: "container",
-    children: [headerElement, mainElement, footerElement],
+    children: [headerElement, mainElement, footerElement, modal],
   });
 
   return container;
