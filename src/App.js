@@ -74,7 +74,7 @@ function App() {
     points.innerText = gameInfo.score;
     setTimeout(() => {
       generateGameField();
-    }, 1500);
+    }, 2500);
   }
 
   // Footer

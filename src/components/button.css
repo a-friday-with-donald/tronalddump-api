@@ -3,7 +3,7 @@
   padding: 0.5rem 2rem 0.5rem 2rem;
   background: none;
   border: none;
-  font-size: clamp(0.8rem, 1vw, 1.5vw);
+  font-size: clamp(0.6rem, 1.2rem, 1.5vw);
 }
 
 .btn--Head-Disabled {

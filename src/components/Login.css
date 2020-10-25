@@ -26,6 +26,6 @@
     padding: 0;
     letter-spacing: .8vw;
     text-align: center;
-    font-size: clamp(1rem, 3vw, 3vw);
+    font-size: clamp(.7rem, 2rem, 2vw);
     color:rgba(255,255,255, .5);
 }
