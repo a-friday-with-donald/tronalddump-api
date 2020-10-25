@@ -1,4 +1,7 @@
 .main {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
