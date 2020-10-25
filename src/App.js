@@ -15,7 +15,6 @@ import { getRandomQuote, getAllTags } from "./utils/api";
 
 import { createElement } from "./utils/elements";
 
-
 function App() {
   // configuration default
   let gameInfo = null;
@@ -64,7 +63,10 @@ function App() {
       // the player choose the wrong one
       if (!gameInfo.answers[answerPlayer].includes(gameInfo.correctAnswer)) {
         mainElement.innerHTML = "";
-        const meme = Meme(`${playerName}! You are fired`, `loose all points`);
+        const meme = Meme(
+          `I knew you're Fake News. I was talking about ${gameInfo.correctAnswer}.`,
+          `${playerName}! You are fired and you loose all points ...`
+        );
         mainElement.append(meme);
         points.innerText = deletePlayer(playerName);
       }
