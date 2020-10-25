@@ -29,3 +29,9 @@
   font-size: clamp(0.7rem, 2rem, 2vw);
   color: rgba(255, 255, 255, 0.5);
 }
+
+@media (max-device-width: 576px) {
+  .login-input {
+    font-size: 1rem;
+  }
+}
