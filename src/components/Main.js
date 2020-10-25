@@ -1,4 +1,4 @@
-import "./main.css";
+import "./Main.css";
 import { createElement } from "../utils/elements";
 
 function Main() {
