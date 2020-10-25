@@ -1,6 +1,7 @@
 import "./app.css";
 import Button from "./components/Button";
 import Header from "./components/Header";
+import Main from "./components/main";
 import getScore from "./utils/localStorage/getScore";
 import storeScore from "./utils/localStorage/storeScore";
 import { getRandomQuote, getAllTags } from "./utils/api";
@@ -11,17 +12,11 @@ const PrimaryButton = styled(Button, "bg-primary");
 function App() {
   const header = Header();
 
-  const main = createElement("main", {
-    innerText: "👋",
-  });
+  const mainElement = Main();
 
   const container = createElement("div", {
-    children: [
-      header,
-      main,
-      Button({ innerText: "Hello" }),
-      PrimaryButton({ innerText: "World" }),
-    ],
+    className: "container",
+    children: [header, mainElement],
   });
 
   const playerName = "Horst";
