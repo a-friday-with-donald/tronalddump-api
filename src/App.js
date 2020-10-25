@@ -13,8 +13,8 @@ import storeScore from "./utils/localStorage/storeScore";
 import deletePlayer from "./utils/localStorage/deletePlayer";
 import { getRandomQuote, getAllTags } from "./utils/api";
 
-import { createElement, styled } from "./utils/elements";
-
+import { createElement } from "./utils/elements";
+// import { createElement, styled } from "./utils/elements";
 // const PrimaryButton = styled(Button, "bg-primary");
 
 function App() {
