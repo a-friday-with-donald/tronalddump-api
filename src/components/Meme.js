@@ -1,7 +1,7 @@
 import { createElement, styled } from "../utils/elements";
 import "./Meme.css";
 
-export default function Meme(quote, tag) {
+export default function Meme(quote, tag = "") {
   const meme = createElement("div", {
     children: [
       createElement("div", {

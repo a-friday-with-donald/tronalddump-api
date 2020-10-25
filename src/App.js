@@ -16,9 +16,6 @@ function App() {
   const placeholder =
     "I've always won, and I'm going to continue to win. And that's the way it is.";
 
-  // Header
-  const headerElement = Header();
-
   // Main
   const mainElement = Main();
 
@@ -34,22 +31,23 @@ function App() {
   );
   mainElement.append(loginForm);
 
-  // Placeholder during loading new content
-  const meme = Meme(placeholder, "Donald Trump");
-
+  
   // start game after login
   function contentPlacement(playerName) {
     if (playerName === "") {
-      playerName = "anonymous";
+      playerName = "Pete";
     }
     player = playerName;
+    
+    // Placeholder during loading new content
+    const meme = Meme(placeholder, "Donald Trump");
 
     mainElement.innerHTML = "";
     mainElement.append(meme);
 
     // generate game info for first round
     // const gameInfo = getGameInfo();
-    // generateGameField(gameInfo);
+    generateGameField();
   }
 
   // Game Engine
@@ -57,6 +55,30 @@ function App() {
   // getGameInfo()
 
   // generateGameField(gameInfo)
+  function generateGameField() {
+    mainElement.innerHTML = "";
+    const meme = Meme(placeholder);
+    const buttonContainer = createElement("div", {
+      className: "buttonContainer",
+      children: 
+      [
+        Button({
+          innerText: "Fake 1",
+          className: "btn btn-one"
+        }),
+        Button({
+          innerText: "Fake 2",
+          className: "btn btn-two"
+        }),
+        Button({
+          innerText: "Fake 3",
+          className: "btn btn-three"
+        }),
+      ]
+    })
+    
+    mainElement.append(meme, buttonContainer);
+  };
 
   // reading players response
 
@@ -68,33 +90,12 @@ function App() {
     innerText: "0",
     className: "footer--points",
   });
-  console.log(footerElement.span);
   footerElement.append(points);
-
-  // Game Instructions
-
-  const modal = createElement("div", {
-    className: "modalContainer",
-    children: [
-      createElement("h2", {
-        className: "modal-head",
-        innerText: "Game instructions",
-      }),
-      Button({
-        className: "btn--close",
-        innerText: "X",
-        onclick: () => {
-          document.querySelector(".modalContainer").classList.toggle("hidden");
-        },
-      }),
-      Modal(),
-    ],
-  });
 
   // export site completed
   const container = createElement("div", {
     className: "container",
-    children: [headerElement, mainElement, footerElement, modal],
+    children: [Header(), mainElement, footerElement, Modal()],
   });
 
   return container;
