@@ -1,5 +1,5 @@
 import { createElement, styled } from "../utils/elements";
-import "./Footer.css";
+import "./footer.css";
 
 export default function Footer() {
   const footer = createElement("footer", {

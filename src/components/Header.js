@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./header.css";
 import logoSrc from "../assets/meme_logo.png";
 import Button from "./Button";
 import { createElement } from "../utils/elements";

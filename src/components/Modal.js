@@ -1,5 +1,5 @@
 import { createElement } from "../utils/elements";
-import "./Modal.css";
+import "./modal.css";
 import Button from "./Button";
 
 export default function Modal() {
