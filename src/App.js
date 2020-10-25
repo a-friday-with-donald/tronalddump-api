@@ -28,20 +28,16 @@ function App() {
   const mainElement = Main();
 
   // default when open site - give name by user
-  const loginForm = Loginform(
-    Button({
-      className: "btn btn--login",
-      innerText: "Play ►",
-      onclick: () => {
-        if (input.value === "") {
-          gameEngine();
-        } else {
-          playerName = input.value;
-          gameEngine();
-        }
-      },
-    })
-  );
+  const loginForm = Loginform({
+    onsubmit: (event) => {
+      playerName = event;
+      // Placeholder during loading new content
+      mainElement.innerHTML = "";
+      const meme = Meme(placeholder, "Donald Trump");
+      mainElement.append(meme);
+      gameEngine();
+    },
+  });
   mainElement.append(loginForm);
 
   // Game Engine
@@ -78,11 +74,6 @@ function App() {
         mainElement.append(meme);
         points.innerText = deletePlayer(playerName);
       }
-    } else {
-      // Placeholder during loading new content
-      mainElement.innerHTML = "";
-      const meme = Meme(placeholder, "Donald Trump");
-      mainElement.append(meme);
     }
 
     gameInfo = await getQuestionInfo(playerName);
@@ -163,7 +154,7 @@ async function getQuestionInfo(playerName) {
   }
 
   while (choices.length < 3) {
-    let index = Math.floor(Math.random() * (answerPool.length));
+    let index = Math.floor(Math.random() * answerPool.length);
     if (index !== indexAlreadyTaken) {
       choices.push(answerPool[index]);
       indexAlreadyTaken = index;
