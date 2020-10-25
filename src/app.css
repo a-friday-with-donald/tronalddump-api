@@ -1,22 +1,14 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 80px 1fr 80px;
+  background: linear-gradient(
+    80.47deg,
+    #4e3e96 0%,
+    #652d73 45.31%,
+    #913232 97.92%
+  );
 }
 
-:root {
-  --bg-primary: rgb(48, 118, 209);
-}
 
-html {
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  background: rgb(18, 27, 27);
-}
-
-.bg-primary {
-  background: var(--bg-primary);
-}

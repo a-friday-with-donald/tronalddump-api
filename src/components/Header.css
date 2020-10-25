@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  padding: 1rem;
+  grid-row: 1 / 2;
+  padding: 0 10% 0 10%;
+}
+
+.header > * {
+  margin-bottom: 1rem;
+}
+
+.header--link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: auto;
+  column-gap: 1rem;
+}
+
+.logo-titel{
+  font-size: clamp(1rem, 2vw, 2vw);
+}
+
+.logo--img {
+  height: 60px;
+}
+
+.head-button-container :first-child {
+  margin-right: 1rem;
+}
