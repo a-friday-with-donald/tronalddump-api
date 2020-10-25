@@ -2,7 +2,7 @@ import "./Main.css";
 import { createElement } from "../utils/elements";
 
 function Main() {
-  const quote = createElement("p", {
+  /*  const quote = createElement("p", {
     innerText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.",
   });
@@ -30,11 +30,11 @@ function Main() {
   const selectionContainer = createElement("div", {
     className: "selectionContainer",
     children: [selection1, selection2, selection3],
-  });
+  }); */
 
   const main = createElement("main", {
     className: "main",
-    children: [quoteContainer, selectionContainer],
+    // children: [quoteContainer, selectionContainer],
   });
 
   return main;
