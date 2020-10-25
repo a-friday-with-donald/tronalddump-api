@@ -4,6 +4,7 @@ import Header from "./components/Header";
 
 import Footer from "./components/Footer";
 import Loginform from "./components/Login";
+import LoadingAnimation from "./components/LoadingAnimation";
 import Meme from "./components/Meme";
 import Main from "./components/Main";
 import Modal from "./components/Modal";
@@ -15,11 +16,11 @@ import { getRandomQuote, getAllTags } from "./utils/api";
 
 import { createElement } from "./utils/elements";
 
-
 function App() {
   // configuration default
   let gameInfo = null;
   let playerName = null;
+  const loader = LoadingAnimation();
   const placeholder =
     "I've always won, and I'm going to continue to win. And that's the way it is.";
 
@@ -33,7 +34,7 @@ function App() {
       // Placeholder during loading new content
       mainElement.innerHTML = "";
       const meme = Meme(placeholder, "Donald Trump");
-      mainElement.append(meme);
+      mainElement.append(meme, loader);
       gameEngine();
     },
   });
