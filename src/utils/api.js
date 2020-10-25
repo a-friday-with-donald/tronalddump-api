@@ -4,7 +4,7 @@ export async function getRandomQuote() {
   const data = await response.json();
   return {
     quote: data.value,
-    tags: data.tags,
+    rightAnswer: data.tags[0],
   };
 }
 

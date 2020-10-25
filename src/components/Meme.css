@@ -1,0 +1,39 @@
+.meme {
+  font-size: clamp(1rem, 2vw, 2vw);
+  font-weight: lighter;
+  font-style: italic;
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  margin-top: 3rem;
+}
+
+.meme::before {
+  content: "\201D";
+  position: absolute;
+  top: -80px;
+  left: -70px;
+  z-index: -1;
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 12rem;
+}
+
+.meme::after {
+  content: "\201D";
+  position: absolute;
+  bottom: -200px;
+  right: -10px;
+  z-index: -1;
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 12rem;
+}
+
+.meme--author {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: 10%;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}

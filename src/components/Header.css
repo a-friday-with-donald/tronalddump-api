@@ -1,121 +1,48 @@
-/*
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-}
-
-nav {
+.header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin: 24px calc(100% / 12);
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  padding: 1rem;
+  grid-row: 1 / 2;
+  padding: 5% 5% 0 5%;
+  min-width: 360px;
 }
 
-nav > div > a {
-  margin-left: 24px;
-  padding: 16px 24px;
+.header > * {
+  margin-bottom: 1rem;
 }
 
-nav > div > a:nth-child(2) {
-  margin-left: 24px;
-  border: solid 2px white;
-  border-radius: 32px;
-}
-
-.logoContainer {
+.header--link {
   display: flex;
-  align-items: center;
+  align-items: space-around;
+  flex-wrap: wrap;
+  margin-right: auto;
+  column-gap: 1rem;
 }
 
-.logoContainer > img {
-  height: 32px;
+.logo-titel{
+  font-size: clamp(1rem, 2vw, 2vw);
+}
+
+.logo--img {
+  height: 60px;
 }
 
 
-
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-
-html {
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-}
-
-p {
-  font-size: 2.4rem;
-  text-align: center;
-}
-
-h1 {
-  font-weight: 400;
-  font-size: 2.4rem;
-  margin: 0 24px 0 12px;
-}
-
-a,
-button {
-  color: white;
-  text-decoration: none;
-  font-size: 1.6rem;
-}
-
-body {
-  background: linear-gradient(
-    80.47deg,
-    #4e3e96 0%,
-    #652d73 45.31%,
-    #913232 97.92%
-  );
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 80px;
-}
-
-nav {
+.head-button-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 24px calc(100% / 12);
+  justify-content: space-around;
+  column-gap: .5rem;
 }
 
-nav > div > a {
-  margin-left: 24px;
-  padding: 16px 24px;
-}
-
-nav > div > a:nth-child(2) {
-  margin-left: 24px;
-  border: solid 2px white;
-  border-radius: 32px;
-}
-
-.logoContainer {
-  display: flex;
-  align-items: center;
-}
-
-.logoContainer > img {
-  height: 32px;
-}
-
-main {
-  margin: 80px calc(100% / 12) 0;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: white;
-  height: 80px;
-  width: 100%;
+@media (max-device-width: 600px) {
+  .head-button-container {
+    width: 100%;
+  }
+  .header--link {
+    width: 100%;
+  }
 }

@@ -1,44 +1,46 @@
 import "./Header.css";
 import logoSrc from "../assets/meme_logo.png";
+import Button from "./Button";
 import { createElement } from "../utils/elements";
 
 function Header() {
-  const logoIcon = createElement("img", {
-    src: logoSrc,
-    alt: "Logo",
-  });
-
-  const appName = createElement("h1", {
-    innerHTML: "<b>MEME</b>GENERATOR",
-  });
-
-  const logoLink = createElement("a", {
-    href: "null",
-    className: "logoContainer",
-    children: [logoIcon, appName],
-  });
-
-  const linkLeaderBoard = createElement("a", {
-    href: "null",
-    innerText: "leaderboards",
-  });
-
-  const linkSignInUp = createElement("a", {
-    href: "null",
-    innerText: "sign in / sign up",
-  });
-
-  const navLinkContainer = createElement("div", {
-    children: [linkLeaderBoard, linkSignInUp],
-  });
-
-  const nav = createElement("nav", {
-    children: [logoLink, navLinkContainer],
-  });
-
   const header = createElement("header", {
     className: "header",
-    children: [nav],
+    children: [
+      createElement("a", {
+        className: "header--link",
+        href: "#",
+        children: [
+          createElement("img", {
+            className: "logo--img",
+            src: logoSrc,
+            alt: "Restart App",
+          }),
+          createElement("h1", {
+            className: "logo-titel",
+            innerText: "Tronald Dump",
+          }),
+        ],
+      }),
+      createElement("div", {
+        className: "head-button-container",
+        children: [
+          Button({
+            className: "btn btn--Head-Disabled",
+            innerText: "Leaderboard",
+          }),
+          Button({
+            className: "btn btn--Head",
+            innerText: "Instructions",
+            onclick: () => {
+              document
+                .querySelector(".modalContainer")
+                .classList.toggle("hidden");
+            },
+          }),
+        ],
+      }),
+    ],
   });
 
   return header;
