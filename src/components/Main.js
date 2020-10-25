@@ -1,7 +1,7 @@
 import "./Main.css";
 import { createElement } from "../utils/elements";
 
-function Main() {
+export default function Main() {
   
   const main = createElement("main", {
     className: "main"
@@ -9,5 +9,3 @@ function Main() {
 
   return main;
 }
-
-export default Main;

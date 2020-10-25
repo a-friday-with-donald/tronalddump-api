@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 80px 1fr 80px;
+  grid-template-rows: auto 1fr 80px;
   background: linear-gradient(
     80.47deg,
     #4e3e96 0%,
