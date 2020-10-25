@@ -14,13 +14,12 @@ import deletePlayer from "./utils/localStorage/deletePlayer";
 import { getRandomQuote, getAllTags } from "./utils/api";
 
 import { createElement } from "./utils/elements";
-// import { createElement, styled } from "./utils/elements";
-// const PrimaryButton = styled(Button, "bg-primary");
+
 
 function App() {
   // configuration default
   let gameInfo = null;
-  let playerName = "Pete";
+  let playerName = null;
   const placeholder =
     "I've always won, and I'm going to continue to win. And that's the way it is.";
 
@@ -52,11 +51,6 @@ function App() {
           `+ 0 points`
         );
         mainElement.append(meme);
-        gameInfo = await getQuestionInfo(playerName);
-        setTimeout(() => {
-          generateGameField();
-        }, 1500);
-        return;
       }
 
       // the player choose the right one
@@ -142,22 +136,22 @@ async function getQuestionInfo(playerName) {
   const answerPool = answers.filter(Boolean);
   let choices = [];
   let rightAnswer = quote.rightAnswer;
-  let indexAlreadyTaken = null;
+  let indexAlreadyAdded = null;
 
   const isValid = Boolean(rightAnswer);
 
   if (isValid) {
     choices.push(rightAnswer);
-    indexAlreadyTaken = answerPool.indexOf(rightAnswer);
+    indexAlreadyAdded = answerPool.indexOf(rightAnswer);
   } else {
     rightAnswer = -1;
   }
 
   while (choices.length < 3) {
     let index = Math.floor(Math.random() * answerPool.length);
-    if (index !== indexAlreadyTaken) {
+    if (index !== indexAlreadyAdded) {
       choices.push(answerPool[index]);
-      indexAlreadyTaken = index;
+      indexAlreadyAdded = index;
     }
   }
 
