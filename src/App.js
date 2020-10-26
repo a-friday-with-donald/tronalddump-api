@@ -69,6 +69,7 @@ function App() {
 
     gameInfo = await nextGameInfo;
     points.innerText = getScore(playerName);
+    nextGameInfo = getQuestionInfo(playerName);
     setTimeout(() => {
       generateGameField();
     }, 2500);
