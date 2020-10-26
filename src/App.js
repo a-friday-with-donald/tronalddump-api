@@ -91,17 +91,17 @@ function App() {
       children: [
         Button({
           innerText: gameInfo.answers[0],
-          className: "btn btn-one",
+          className: "btn btn--answer",
           onclick: () => gameEngine(0),
         }),
         Button({
           innerText: gameInfo.answers[1],
-          className: "btn btn-two",
+          className: "btn btn--answer",
           onclick: () => gameEngine(1),
         }),
         Button({
           innerText: gameInfo.answers[2],
-          className: "btn btn-three",
+          className: "btn btn--answer",
           onclick: () => gameEngine(2),
         }),
       ],
