@@ -17,21 +17,19 @@ import { getRandomQuote, getAllTags } from "./utils/api";
 import { createElement } from "./utils/elements";
 
 function App() {
-  // configuration default
   let gameInfo = null;
   let playerName = null;
+  let nextGameInfo = null;
   const loader = LoadingAnimation();
   const placeholder =
     "I've always won, and I'm going to continue to win. And that's the way it is.";
 
-  // Main
   const mainElement = Main();
 
-  // default when open site - give name by user
   const loginForm = Loginform({
     onsubmit: (event) => {
       playerName = event;
-      // Placeholder during loading new content
+      nextGameInfo = getQuestionInfo(playerName);
       mainElement.innerHTML = "";
       const meme = Meme(placeholder, "Donald Trump");
       mainElement.append(meme, loader);
@@ -40,11 +38,8 @@ function App() {
   });
   mainElement.append(loginForm);
 
-  // Game Engine
   async function gameEngine(answerPlayer = -1) {
-    // the player played the game
     if (answerPlayer !== -1) {
-      // there is no right answer
       if (gameInfo.correctAnswer === -1) {
         mainElement.innerHTML = "";
         const meme = Meme(
@@ -54,7 +49,6 @@ function App() {
         mainElement.append(meme);
       }
 
-      // the player choose the right one
       if (gameInfo.answers[answerPlayer].includes(gameInfo.correctAnswer)) {
         mainElement.innerHTML = "";
         const meme = Meme(`${playerName}! You nailed it!`, `+ 1 points`);
@@ -62,7 +56,6 @@ function App() {
         storeScore(playerName, 1);
       }
 
-      // the player choose the wrong one
       if (!gameInfo.answers[answerPlayer].includes(gameInfo.correctAnswer)) {
         mainElement.innerHTML = "";
         const meme = Meme(
@@ -74,26 +67,22 @@ function App() {
       }
     }
 
-    gameInfo = await getQuestionInfo(playerName);
-    points.innerText = gameInfo.score;
+    gameInfo = await nextGameInfo;
+    points.innerText = getScore(playerName);
     setTimeout(() => {
       generateGameField();
     }, 2500);
   }
 
-  // Footer
   const footerElement = Footer();
   const points = createElement("span", {
     className: "footer--points",
   });
-  if (gameInfo) {
-    points.innerText = gameInfo.score;
-  } else {
-    points.innerText = "0";
-  }
+
+  gameInfo ? (points.innerText = gameInfo.score) : (points.innerText = "0");
+
   footerElement.append(points);
 
-  // build the game board on screen
   function generateGameField() {
     const meme = Meme(gameInfo.quote);
     const buttonContainer = createElement("div", {
@@ -120,7 +109,6 @@ function App() {
     mainElement.append(meme, buttonContainer);
   }
 
-  // export site completed
   const container = createElement("div", {
     className: "container",
     children: [Header(), mainElement, footerElement, Modal()],
@@ -131,7 +119,6 @@ function App() {
 
 export default App;
 
-// get game infos for the round
 async function getQuestionInfo(playerName) {
   const quote = await getRandomQuote();
   const answers = await getAllTags();
