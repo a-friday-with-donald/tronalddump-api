@@ -1,4 +1,4 @@
-import { createElement, styled } from "../utils/elements";
+import { createElement } from "../utils/elements";
 import "./footer.css";
 
 export default function Footer() {
