@@ -146,7 +146,6 @@ async function getQuestionInfo(playerName) {
     }
   }
 
-  // mixin the array
   const mixedChoices = choices.sort(() => Math.random() - 0.5);
 
   return {
