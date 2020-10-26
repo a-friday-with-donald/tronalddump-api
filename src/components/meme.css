@@ -1,12 +1,12 @@
 .meme {
-  font-size: clamp(1rem, 2vw, 2vw);
-  font-weight: lighter;
+  font-size: 2.4em;
+  line-height: 2em;
+  font-weight: 400;
   font-style: italic;
   text-align: center;
   word-wrap: break-word;
   position: relative;
   z-index: 1;
-  margin-top: 3rem;
 }
 
 .meme::before {
@@ -30,10 +30,9 @@
 }
 
 .meme--author {
-  margin-top: 1rem;
+  margin-top: 2.4rem;
   margin-left: auto;
-  margin-right: 10%;
   width: fit-content;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1rem;
+  font-size: 2rem;
 }

@@ -11,27 +11,19 @@
   height: 3rem;
   background: none;
   border: none;
-  width: 80%;
+  width: 100%;
   border-bottom: 1px solid white;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 1em;
   color: white;
   font-size: 2rem;
-  letter-spacing: 0.4rem;
   text-align: center;
   outline: none;
 }
 
 .login-input::placeholder {
   padding: 0;
-  letter-spacing: 0.8vw;
   text-align: center;
-  font-size: clamp(0.7rem, 2rem, 2vw);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-@media (max-device-width: 576px) {
-  .login-input {
-    font-size: 1rem;
-  }
+  color: inherit;
+  opacity: 0.25;
 }

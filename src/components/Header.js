@@ -1,5 +1,5 @@
 import "./header.css";
-import logoSrc from "../assets/meme_logo.png";
+import logoSrc from "../assets/tronald-dump-logo-01.svg";
 import Button from "./Button";
 import { createElement } from "../utils/elements";
 
